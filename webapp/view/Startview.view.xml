@@ -1,0 +1,21 @@
+<mvc:View controllerName="finalproject.controller.Startview" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:smartfilterbar="sap.ui.comp.smartfilterbar">
+    <Page id="page" title="{i18n>title}">
+        <Toolbar id="TB1" height="20%" class="sapUiSmallMargin">
+            <l:VerticalLayout class="sapUiResponsiveMargin">
+                <Title text="{i18n>ToolBarText}" class="sapUiLargeMarginBottom" />
+                <DatePicker id="DatePicker" placeholder="{i18n>placeholder}" value=""/>
+            </l:VerticalLayout>
+        </Toolbar>
+        <smartTable:SmartTable
+            id="SmartTable"
+            entitySet="ZPB_Bestellung"
+            tableType="Table"
+            enableExport="false"
+            class="sapUiResponsiveMargin"
+            enableAutoBinding="true"
+            header="{i18n>tableHeader}"
+            initiallyVisibleFields="DOKID,KUNDE,KONTAKT,LIEFERTAG,STARTZEIT,ENDZEIT,LMENGE,MATTXT"
+            enableAutoColumnWidth="true"
+        />
+    </Page>
+</mvc:View>

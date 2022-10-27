@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZPB_ODATA_BETON_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="ZPB_BestellungType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="DOKID"/>
+                </Key>
+                <Property Name="DOKID" Type="Edm.Guid" Nullable="false" sap:unicode="false"/>
+                <Property Name="STARTZEIT" Type="Edm.Time" Precision="0" sap:unicode="false"/>
+                <Property Name="ENDZEIT" Type="Edm.Time" Precision="0" sap:unicode="false"/>
+                <Property Name="LIEFERTAG" Type="Edm.DateTime" Precision="0" sap:unicode="false"/>
+                <Property Name="KONTAKT" Type="Edm.String" sap:unicode="false"/>
+                <Property Name="LMENGE" Type="Edm.Float" sap:unicode="false"/>
+                <Property Name="KUNDE" Type="Edm.String" sap:unicode="false"/>
+                <Property Name="MATTXT" Type="Edm.String" sap:unicode="false"/>
+            </EntityType>
+            <EntityType Name="ZPB_TRIPSType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="TRIPID"/>
+                </Key>
+                <Property Name="TRIPID" Type="Edm.Guid" Nullable="false" sap:unicode="false"/>
+                <Property Name="STARTZEIT" Type="Edm.Time" Precision="0" sap:unicode="false"/>
+                <Property Name="ENDZEIT" Type="Edm.Time" Precision="0" sap:unicode="false"/>
+                <Property Name="LIEFERTAG" Type="Edm.DateTime" Precision="0" sap:unicode="false"/>
+                <Property Name="FAHRZEUG" Type="Edm.String" sap:unicode="false"/>
+                <Property Name="LMENGE" Type="Edm.Float" sap:unicode="false"/>
+                <Property Name="FABRIK" Type="Edm.String" sap:unicode="false"/>
+                <Property Name="KUNDE" Type="Edm.String" sap:unicode="false"/>
+            </EntityType>
+            <EntityContainer Name="ZPB_ODATA_BETON_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZPB_Bestellung" EntityType="ZPB_ODATA_BETON_SRV.ZPB_BestellungType" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZPB_TRIPS" EntityType="ZPB_ODATA_BETON_SRV.ZPB_TRIPSType" sap:searchable="true" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="https://cc.connect:44333/sap/opu/odata/sap/ZPB_ODATA_BETON_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://cc.connect:44333/sap/opu/odata/sap/ZPB_ODATA_BETON_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
