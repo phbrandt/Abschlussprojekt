@@ -2,20 +2,29 @@
     <Page id="page" title="{i18n>title}">
         <Toolbar id="TB1" height="20%" class="sapUiSmallMargin">
             <l:VerticalLayout class="sapUiResponsiveMargin">
-                <Title text="{i18n>ToolBarText}" class="sapUiLargeMarginBottom" />
-                <DatePicker id="DatePicker" placeholder="{i18n>placeholder}" value=""/>
+                <Title text="{i18n>ToolBarText}" class="sapUiMediumMarginBottom" />
+                <DatePicker id="DatePicker" placeholder="{i18n>placeholder}" value="" />
             </l:VerticalLayout>
         </Toolbar>
         <smartTable:SmartTable
-            id="SmartTable"
-            entitySet="ZPB_Bestellung"
+            id="OrderTable"
+            entitySet="ZPB_BestellungenTypeSet"
             tableType="Table"
             enableExport="false"
             class="sapUiResponsiveMargin"
             enableAutoBinding="true"
             header="{i18n>tableHeader}"
-            initiallyVisibleFields="DOKID,KUNDE,KONTAKT,LIEFERTAG,STARTZEIT,ENDZEIT,LMENGE,MATTXT"
+            initiallyVisibleFields="DokId,Kunde,Kontakt,LieferTag,StartZeit,EndZeit,LMenge,Mattxt"
             enableAutoColumnWidth="true"
         />
+        <footer>
+            <OverflowToolbar id="BottomBar" class="sapUiSmallMargin">
+                <content>
+                    <ToolbarSpacer />
+                    <Button id="TruckButton" text="{i18n>TruckButton}" type="Transparent" />
+                    <Button id="CalcButton" text="{i18n>CalcButton}" type="Emphasized"></Button>
+                </content>
+            </OverflowToolbar>
+        </footer>
     </Page>
 </mvc:View>
