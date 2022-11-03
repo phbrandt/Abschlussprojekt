@@ -21,8 +21,8 @@
             <OverflowToolbar id="BottomBar" class="sapUiSmallMargin">
                 <content>
                     <ToolbarSpacer />
-                    <Button id="TruckButton" text="{i18n>TruckButton}" type="Transparent" />
-                    <Button id="CalcButton" text="{i18n>CalcButton}" type="Emphasized"></Button>
+                    <Button id="TruckButton" text="{i18n>TruckButton}" type="Default" press=".onTruckPress" class="sapUiSmallMarginEnd" />
+                    <Button id="CalcButton" text="{i18n>CalcButton}" type="Emphasized" press=".onCalcPress" class="sapUiSmallMarginEnd" />
                 </content>
             </OverflowToolbar>
         </footer>

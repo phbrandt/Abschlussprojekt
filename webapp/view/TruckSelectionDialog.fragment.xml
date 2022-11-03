@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog id="TruckSelection" title="{i18n>TruckSelectionTitle}" contentWidth="500px">
+        <content>
+            <List id="TruckList" mode='MultiSelect' headerText="{i18n>TruckListTitle}">
+                <StandardListItem title="Truck 1" info="HH-BT-01" icon="/Trucks/Mischer1.jpg"/>
+                <StandardListItem title="Truck 2" info="HH-BT-02" icon="/Trucks/Mischer2.jpg"/>
+                <StandardListItem title="Truck 3" info="HH-BT-03" icon="/Trucks/Mischer3.jpg"/>
+                <StandardListItem title="Truck 4" info="HH-BT-04" icon="/Trucks/Mischer4.jpg"/>
+            </List>
+        </content>
+        <beginButton>
+            <Button id="beginButton" text="{i18n>TruckSelectionBeginButton}" press=".onCloseDialog" type="Emphasized" />
+        </beginButton>
+        <endButton>
+            <Button id="endButton" text="{i18n>TruckSelectionEndButton}" press=".onCloseDialog" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
