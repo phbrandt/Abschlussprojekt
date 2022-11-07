@@ -1,12 +1,7 @@
-<mvc:View
-		controllerName="finalproject.controller.TruckSequence"
-		xmlns="sap.m"
-		xmlns:mvc="sap.ui.core.mvc">
-	<Page title="{i18n>homePageTitle}" showNavButton="true" navButtonPress=".onNavBack">
-		<headerContent>
-			<Button
-					icon="sap-icon://hello-world"
-					press=".onOpenDialog"/>
-		</headerContent>		
-	</Page>
+<mvc:View controllerName="finalproject.controller.TruckSequence" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+    <Page id="TruckSequence" title="{i18n>TruckSequenceTitle}" showNavButton="true" navButtonPress=".onNavBack">
+        <Toolbar id="Toolbar" height="10%" class="sapUiSmallMargin">
+            <Title text="{i18n>TruckSquenceBarTitle}"/>
+        </Toolbar>
+    </Page>
 </mvc:View>

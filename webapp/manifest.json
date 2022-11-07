@@ -107,7 +107,7 @@
                 {
                     "name": "TruckSequence",
                     "pattern": ":?query",
-                    "target":[
+                    "target": [
                         "TargetTruckSequence"
                     ]
                 }

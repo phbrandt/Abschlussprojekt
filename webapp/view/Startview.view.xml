@@ -16,6 +16,7 @@
             header="{i18n>tableHeader}"
             initiallyVisibleFields="DokId,Kunde,Kontakt,LieferTag,StartZeit,EndZeit,LMenge,Mattxt"
             enableAutoColumnWidth="true"
+            
         />
         <footer>
             <OverflowToolbar id="BottomBar" class="sapUiSmallMargin">
