@@ -103,6 +103,13 @@
                     "target": [
                         "TargetStartview"
                     ]
+                },
+                {
+                    "name": "TruckSequence",
+                    "pattern": ":?query",
+                    "target":[
+                        "TargetTruckSequence"
+                    ]
                 }
             ],
             "targets": {
@@ -112,6 +119,13 @@
                     "clearControlAggregation": false,
                     "viewId": "Startview",
                     "viewName": "Startview"
+                },
+                "TargetTruckSequence": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "TruckSequence",
+                    "viewName": "TruckSequence"
                 }
             }
         },

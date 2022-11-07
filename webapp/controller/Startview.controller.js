@@ -32,7 +32,8 @@ sap.ui.define([
             },
 
             onCalcPress: function (evt) {
-                MessageToast.show("Calc Pressed");
+                var oRouter = this.getOwnerComponent().getRouter();
+                oRouter.navTo("TruckSequence");
             }
         });
     });
