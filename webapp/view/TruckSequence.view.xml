@@ -1,7 +1,10 @@
-<mvc:View controllerName="finalproject.controller.TruckSequence" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+<mvc:View controllerName="finalproject.controller.TruckSequence" xmlns="sap.m" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:mvc="sap.ui.core.mvc">
     <Page id="TruckSequence" title="{i18n>TruckSequenceTitle}" showNavButton="true" navButtonPress=".onNavBack">
         <Toolbar id="Toolbar" height="10%" class="sapUiSmallMargin">
-            <Title text="{i18n>TruckSquenceBarTitle}"/>
+            <Title text="{i18n>TruckSequenceBarTitle}" />
         </Toolbar>
+        <smartTable:SmartTable id="TripsTable" entitySet="ZPB_TripsSet" tableType="Table" enableExport="false" class="sapUiResponsiveMargin" enableAutoBinding="true" header="{i18n>TripsTableHeader}" 
+        enableAutoColumnWidth="true"
+        initiallyVisibleFields="TripId,Fabrik,Kunde,StartZeit,EndZeit,Fahrzeug,LMenge,Mattxt"/>
     </Page>
 </mvc:View>

@@ -34,16 +34,18 @@
                 <Key>
                     <PropertyRef Name="TripId"/>
                 </Key>
+                <Property Name="DokId" Type="Edm.Guid" sap:unicode="false"/>
+                <Property Name="Kontakt" Type="Edm.String" MaxLength="40" sap:unicode="false"/>
                 <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client"/>
-                <Property Name="TripId" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="UUID"/>
+                <Property Name="TripId" Type="Edm.Guid" Nullable="false" sap:unicode="false"/>
                 <Property Name="StartZeit" Type="Edm.Time" Precision="0" sap:unicode="false"/>
                 <Property Name="EndZeit" Type="Edm.Time" Precision="0" sap:unicode="false"/>
-                <Property Name="LieferTag" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Date"/>
-                <Property Name="Fahrzeug" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Char"/>
+                <Property Name="LieferTag" Type="Edm.DateTime" Precision="7" sap:unicode="false"/>
+                <Property Name="Fahrzeug" Type="Edm.String" MaxLength="40" sap:unicode="false"/>
                 <Property Name="LMenge" Type="Edm.Double" sap:unicode="false"/>
-                <Property Name="Fabrik" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Char"/>
-                <Property Name="Kunde" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Char"/>
-                <Property Name="Mattxt" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Char"/>
+                <Property Name="Fabrik" Type="Edm.String" MaxLength="40" sap:unicode="false"/>
+                <Property Name="Kunde" Type="Edm.String" MaxLength="40" sap:unicode="false"/>
+                <Property Name="Mattxt" Type="Edm.String" MaxLength="40" sap:unicode="false"/>
             </EntityType>
             <EntityContainer Name="ZPB_ODATA_BETON_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
                 <EntitySet Name="ZPB_BestellungenTypeSet" EntityType="ZPB_ODATA_BETON_SRV.ZPB_BestellungenType" sap:searchable="true" sap:content-version="1"/>

@@ -12,8 +12,6 @@ sap.ui.define([
         return Controller.extend("finalproject.controller.Startview", {
             onInit: function () {
 
-                this.getView().byId("DatePicker").setDateValue(new Date());
-
             },
 
             onTruckPress: function (evt) {
@@ -22,7 +20,7 @@ sap.ui.define([
                         name: "finalproject.view.TruckSelectionDialog"
                     });
                 }
-                this.pDialog.then(function(oDialog) {
+                this.pDialog.then(function (oDialog) {
                     oDialog.open();
                 });
             },
@@ -32,8 +30,21 @@ sap.ui.define([
             },
 
             onCalcPress: function (evt) {
+                var oData = this.getView().getModel();
+                var oSelectedIndex = this.getView().byId("OrderTable").getTable().getSelectedIndices();
+                var oTable = this.getView().byId("OrderTable").getTable();
+                var oRows = oTable.getRows();
+                for (var i of oSelectedIndex) {
+                    oData.create("/ZPB_TripsSet", oRows[i].getBindingContext().getObject());
+                };
+
                 var oRouter = this.getOwnerComponent().getRouter();
                 oRouter.navTo("TruckSequence");
+            },
+
+            onChange: function (oControlEvent) {
+                var sDate = oControlEvent.getParameters().value;
+
             }
         });
     });

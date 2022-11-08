@@ -1,11 +1,13 @@
-<mvc:View controllerName="finalproject.controller.Startview" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:smartfilterbar="sap.ui.comp.smartfilterbar">
-    <Page id="page" title="{i18n>title}">
-        <Toolbar id="TB1" height="20%" class="sapUiSmallMargin">
-            <l:VerticalLayout class="sapUiResponsiveMargin">
-                <Title text="{i18n>ToolBarText}" class="sapUiMediumMarginBottom" />
-                <DatePicker id="DatePicker" placeholder="{i18n>placeholder}" value="" />
-            </l:VerticalLayout>
-        </Toolbar>
+<mvc:View controllerName="finalproject.controller.Startview" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:smartfilterbar="sap.ui.comp.smartfilterbar">
+    <Page id="page" title="{i18n>OrdersTitle}">
+        <smartFilterBar:SmartFilterBar id="smartFilterBar"
+		entitySet="ZPB_BestellungenTypeSet" persistencyKey="DokId">
+		<smartFilterBar:controlConfiguration>
+			<smartFilterBar:ControlConfiguration
+				key="LieferTag">
+			</smartFilterBar:ControlConfiguration>
+		</smartFilterBar:controlConfiguration>
+	</smartFilterBar:SmartFilterBar>
         <smartTable:SmartTable
             id="OrderTable"
             entitySet="ZPB_BestellungenTypeSet"
@@ -13,9 +15,10 @@
             enableExport="false"
             class="sapUiResponsiveMargin"
             enableAutoBinding="true"
-            header="{i18n>tableHeader}"
+            header="{i18n>OrderTableHeader}"
             initiallyVisibleFields="DokId,Kunde,Kontakt,LieferTag,StartZeit,EndZeit,LMenge,Mattxt"
             enableAutoColumnWidth="true"
+            smartFilterId="smartFilterBar"
             
         />
         <footer>
