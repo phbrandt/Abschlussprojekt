@@ -38,6 +38,11 @@ sap.ui.define([
                 oTrucks = Object.assign({Fahrzeug: Truckstring});
 
                 this.byId("TruckSelection").close();
+                if (Truckstring != '') {
+                this.byId("CalcButton").setEnabled(true);
+            } else {
+                this.byId("CalcButton").setEnabled(false);
+            }
             },
 
             onCloseDialog: function () {

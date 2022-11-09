@@ -32,7 +32,7 @@
                 <content>
                     <ToolbarSpacer />
                     <Button id="TruckButton" text="{i18n>TruckButton}" type="Default" press=".onTruckPress" class="sapUiSmallMarginEnd" />
-                    <Button id="CalcButton" text="{i18n>CalcButton}" type="Emphasized" press=".onCalcPress" class="sapUiSmallMarginEnd" />
+                    <Button id="CalcButton" text="{i18n>CalcButton}" type="Emphasized" press=".onCalcPress" class="sapUiSmallMarginEnd" enabled="false"/>
                 </content>
             </OverflowToolbar>
         </footer>
