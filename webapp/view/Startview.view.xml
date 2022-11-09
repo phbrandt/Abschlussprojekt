@@ -1,13 +1,19 @@
 <mvc:View controllerName="finalproject.controller.Startview" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:smartfilterbar="sap.ui.comp.smartfilterbar">
     <Page id="page" title="{i18n>OrdersTitle}">
+    <Toolbar height="20%" class="sapUiSmallMargin">
+    <l:VerticalLayout class="sapUiResponsiveMargin">
         <smartFilterBar:SmartFilterBar id="smartFilterBar"
-		entitySet="ZPB_BestellungenTypeSet" persistencyKey="DokId">
+		entitySet="ZPB_BestellungenTypeSet" persistencyKey="DokId" liveMode="true">
 		<smartFilterBar:controlConfiguration>
 			<smartFilterBar:ControlConfiguration
 				key="LieferTag">
 			</smartFilterBar:ControlConfiguration>
 		</smartFilterBar:controlConfiguration>
 	</smartFilterBar:SmartFilterBar>
+    </l:VerticalLayout>
+    <Title text="{i18n>OrderTitle}" textAlign="Center" class="sapUiLargeMarginBegin"></Title>
+    
+    </Toolbar>
         <smartTable:SmartTable
             id="OrderTable"
             entitySet="ZPB_BestellungenTypeSet"

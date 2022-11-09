@@ -1,12 +1,13 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast",
-    "sap/ui/core/Fragment"
+    "sap/ui/core/Fragment",
+    "sap/ui/model/odata/v2/ODataModel"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, Fragment, MessageToast) {
+    function (Controller, Fragment, ODataModel) {
         "use strict";
 
         return Controller.extend("finalproject.controller.Startview", {
@@ -35,11 +36,14 @@ sap.ui.define([
                 var oTable = this.getView().byId("OrderTable").getTable();
                 var oRows = oTable.getRows();
                 for (var i of oSelectedIndex) {
-                    oData.create("/ZPB_TripsSet", oRows[i].getBindingContext().getObject());
+                    var createSet = oRows[i].getBindingContext().getObject();
+                    delete createSet.__metadata
+                    oData.create("/ZPB_TripsSet", createSet);
                 };
 
                 var oRouter = this.getOwnerComponent().getRouter();
                 oRouter.navTo("TruckSequence");
+                this.getView().getModel().refresh(true);
             },
 
             onChange: function (oControlEvent) {
