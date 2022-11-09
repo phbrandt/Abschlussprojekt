@@ -9,7 +9,7 @@
             </List>
         </content>
         <beginButton>
-            <Button id="beginButton" text="{i18n>TruckSelectionBeginButton}" press=".onCloseDialog" type="Emphasized" />
+            <Button id="beginButton" text="{i18n>TruckSelectionBeginButton}" press=".onConfirmPress" type="Emphasized" />
         </beginButton>
         <endButton>
             <Button id="endButton" text="{i18n>TruckSelectionEndButton}" press=".onCloseDialog" />

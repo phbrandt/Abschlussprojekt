@@ -9,6 +9,7 @@ sap.ui.define([
      */
     function (Controller, Fragment, ODataModel) {
         "use strict";
+        var oTrucks = '';
 
         return Controller.extend("finalproject.controller.Startview", {
             onInit: function () {
@@ -26,6 +27,19 @@ sap.ui.define([
                 });
             },
 
+            onConfirmPress: function () {
+                var truckList = this.getView().byId("TruckList");
+                truckList = this.getView().byId("TruckList").getSelectedItems();
+                var Truckstring = '';
+                for (var i in truckList) {
+                    Truckstring += truckList[i].getTitle() + ',';
+                }
+                Truckstring = Truckstring.slice(0, -1);
+                oTrucks = Object.assign({Fahrzeug: Truckstring});
+
+                this.byId("TruckSelection").close();
+            },
+
             onCloseDialog: function () {
                 this.byId("TruckSelection").close();
             },
@@ -37,7 +51,8 @@ sap.ui.define([
                 var oRows = oTable.getRows();
                 for (var i of oSelectedIndex) {
                     var createSet = oRows[i].getBindingContext().getObject();
-                    delete createSet.__metadata
+                    delete createSet.__metadata;
+                    createSet = Object.assign(createSet, oTrucks);
                     oData.create("/ZPB_TripsSet", createSet);
                 };
 
